@@ -6,7 +6,7 @@ import os
 client = openai.OpenAI(api_key = os.getenv("OPENAI_API_KEY","openai-api-key"))
 
 def ask_ai(question):
-    """ Function that ask ai qn"""
+    """ Function that ask ai question"""
     try:
         response = openai.chat.completions.create(
             model = "gpt-4o-mini", # AI model to use
