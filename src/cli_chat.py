@@ -22,11 +22,11 @@ def ask_ai(question):
 # Test Functions
 if __name__ == "__main__":
     while True:
-        user_question = input("ME : ")
+        user_question = input("You => ")
 
         if user_question.lower()=='quit':
             break
 
         answer = ask_ai(user_question)
 
-        print(f"AI: {answer}")
+        print(f"Response => {answer}")
