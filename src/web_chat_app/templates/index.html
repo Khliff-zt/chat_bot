@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assistance</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2{
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Assistance</h1>
+
+        <!-- Question sections -->
+         <div class="section">
+            <h2>Ask a Question</h2>
+            <div class="input-group">
+                <input type="text" name="" id="questionInput" placeholder="Ask a Question">
+                <button onclick="askQuestion()">Ask</button>
+
+                <div class="loading" id="askLoading">
+                    <div class="spinner"></div>
+                    <p>AI is thinking</p>
+                </div>
+                <div class="answerResponse"></div>
+            </div>
+
+         </div>
+        
+         <!-- Adding document serction -->
+        <div class="section">
+            <h2>Ask Knowledge</h2>
+            <div class="input-group">
+                <textarea name="" id="" placeholder="Add new information to the knowlege base....."></textarea>
+                <button onclick="addDocument()">Add</button>
+                
+                <div class="loading" id="addLoading">
+                    <div class="spinner"></div>
+                    <p>Add document.......</p>
+                </div>
+                <div class="documentResponse"></div>
+            </div>
+         </div>
+
+        <!-- Instructions -->
+         <div class="section">
+            <h2>How to use</h2>
+            <ol>
+                <li><strong>Ask Question:</strong> Type any question in the box above and click "Ask"</li>
+                <li><strong>Add Knowledge:</strong> Add new documents to expand AI's knowlege base</li>
+                <li><strong>Example:</strong>"What is Quantum Computing?", "Tell me about Proper Balance Diet?","How do web API work?"</li>
+            </ol>
+         </div>
+    </div>
+</body>
+</html>
