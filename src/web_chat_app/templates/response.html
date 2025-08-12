@@ -1,0 +1,46 @@
+<html>
+    <div class="response">
+        <strong>Answer:</strong> <br>${ data.answer }
+    </div>
+</html>
+
+
+    <script>
+        async function askQuestion() {
+            const question = document.getElementById('questionInput');
+
+            if (!question.trim()) {
+                alert("Please enter a question");
+                return;
+            }
+            const loadingDiv = document.getElementById('askLoading');
+            const responseDiv = document.getElementById('answerResponse');
+            const button = event.target;
+
+            // Show Loading
+            loadingDiv.innerHTML = '';
+            button.diabled = true;
+
+            try {
+                const response = await fetch('/ask', {
+                    method : 'POST',    
+                    headers : {
+                        'Content-Type' : 'application/json',
+                    },
+                    body : JSON.stringify({ question:question })
+                });
+
+                const data = await response.json();
+
+                if (data.status === 'success') { 
+                    responseDiv.innerHTML = '<div class="response"><strong>Answer:</strong> <br>${ data.answer }</div>';
+                }
+                else {
+                    responseDiv.innerHTML = '<div class="response error"><strong>Error:</strong> <br>${ data.error }</div>';
+                }
+            }
+            catch (error) {
+                    responseDiv.innerHTML = '<div class="response error"><strong>Error:</strong> <br>${ error.message }</div>';
+                }
+        }
+    </script>
